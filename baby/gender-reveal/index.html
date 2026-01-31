@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="hy">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gender Reveal Party Invitation| Webinvitation.am</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://webinvitation.am/gender-reveal/" />
+    <meta
+      property="og:title"
+      content="Gender Reveal Invitation | Webinvitation.am"
+    />
+    <meta
+      property="og:description"
+      content="Gender Reveal Invitation - Մանկական Հրավեր webinvitation.am"
+    />
+    <meta
+      property="og:image"
+      content="https://webinvitation.am/gender-reveal/images/location.jpg"
+    />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="400" />
+    <meta property="og:locale" content="hy_AM" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta
+      property="twitter:url"
+      content="https://webinvitation.am/gender-reveal/"
+    />
+    <meta
+      property="twitter:title"
+      content="Gender Reveal Invitation | Webinvitation.am"
+    />
+    <meta
+      property="twitter:description"
+      content="Gender Reveal Invitation - Մանկական Հրավեր webinvitation.am"
+    />
+    <meta
+      property="twitter:image"
+      content="https://webinvitation.am/gender-reveal/images/location.jpg"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="invitation-container">
+      <img src="./images/boy girl.png" alt="Boy and Girl" class="hero-image" />
+
+      <div class="toys-container">
+        <div class="toy toy-boy">
+          <img
+            src="./images/baloon boy.png"
+            alt="Boy Toy"
+            style="height: 350px"
+          />
+        </div>
+
+        <div class="toy toy-girl">
+          <img
+            src="./images/baloon girl.png"
+            alt="Girl Toy"
+            style="height: 350px"
+          />
+        </div>
+      </div>
+
+      <div class="content-section">
+        <h3 class="invite-text">
+          Սրտանց հրավիրում ենք Ձեզ միասին իմանալու մեր բալիկի սեռը
+        </h3>
+
+        <div class="date-section">
+          <div class="date-container">
+            <div class="date-box">Նոյեմբեր</div>
+            <div class="date-number">10</div>
+            <div class="date-box">17:00</div>
+          </div>
+        </div>
+
+        <div class="location-section">
+          <h3 class="invite-text">Սպասում ենք Ձեզ «Yerevan Park»-ում</h3>
+          <h4 class="location-address">Հասցե՝ Մոնթե Մելքոնյան 31</h4>
+          <img
+            src="./images/place.jpg"
+            alt="Yerevan Park"
+            width="400"
+            class="location-image"
+          />
+        </div>
+
+        <a
+          href="https://yandex.com/maps/-/CLBwR6Mi"
+          target="_blank"
+          class="location-btn"
+        >
+          Ինչպես հասնել
+        </a>
+      </div>
+
+      <div class="rsvp-form">
+        <h2>Կմիանաք՞ Մեզ</h2>
+        <form class="invitation-form" id="invitation-form">
+          <!-- Name and Surname -->
+          <div class="form-group">
+            <label for="guest-name">Ձեր անունը և ազգանունը</label>
+            <input type="text" id="guest-name" name="guest-name" required />
+          </div>
+
+          <!-- Partner's Name -->
+          <div class="form-group">
+            <label for="partner-name">
+              Եթե պլանավորում եք գալ զույգով, նշեք անունը և ազգանունը
+            </label>
+            <input type="text" id="partner-name" name="partner-name" />
+          </div>
+
+          <!-- Child's Name -->
+          <div class="form-group">
+            <label for="child-name">
+              Եթե պլանավորում եք գալ երեխայի հետ, նշեք նրա անունը
+            </label>
+            <input type="text" id="child-name" name="child-name" />
+          </div>
+
+          <!-- Attendance Question -->
+          <div class="form-group">
+            <label>Կկարողանա՞ք ներկա գտնվել</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="attendance" value="yes" required />
+                Կկարողանամ / կարողանանք գալ
+              </label>
+              <label>
+                <input type="radio" name="attendance" value="no" />
+                Չեմ կարող գալ
+              </label>
+              <label>
+                <input type="radio" name="attendance" value="later" />
+                Կտեղեկացնեմ ավելի ուշ
+              </label>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="submit-btn">Ուղարկել</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p>Մենք անհամբեր սպասում ենք տոնելու Ձեր հետ միասին: 🎉</p>
+    </footer>
+    <script src="./script.js"></script>
+    <script>
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+      });
+
+      // Disable key combinations
+      document.addEventListener("keydown", function (e) {
+        // F12
+        if (e.keyCode === 123) {
+          e.preventDefault();
+        }
+
+        // Ctrl+Shift+I / Cmd+Opt+I
+        if (
+          (e.ctrlKey && e.shiftKey && e.keyCode === 73) ||
+          (e.metaKey && e.altKey && e.keyCode === 73)
+        ) {
+          e.preventDefault();
+        }
+
+        // Ctrl+Shift+J / Cmd+Opt+J
+        if (
+          (e.ctrlKey && e.shiftKey && e.keyCode === 74) ||
+          (e.metaKey && e.altKey && e.keyCode === 74)
+        ) {
+          e.preventDefault();
+        }
+
+        // Ctrl+U / Cmd+U
+        if (
+          (e.ctrlKey && e.keyCode === 85) ||
+          (e.metaKey && e.keyCode === 85)
+        ) {
+          e.preventDefault();
+        }
+      });
+    </script>
+  </body>
+</html>

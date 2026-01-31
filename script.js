@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toggle.setAttribute("aria-expanded", String(isActive));
       toggle.setAttribute(
         "aria-label",
-        isActive ? "Закрыть меню" : "Открыть меню"
+        isActive ? "Закрыть меню" : "Открыть меню",
       );
     });
 
@@ -90,51 +90,122 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("orderModal");
   const closeBtn = document.querySelector(".close-modal");
 
+  const chosenTemplate = document.getElementById("chosen-template");
+  const chosenPrice = document.getElementById("chosen-price");
+  const chosenImage = document.getElementById("chosenImage");
+
+  const designInput = document.getElementById("designInput");
+  const priceInput = document.getElementById("priceInput");
+
   if (openBtns && modal && closeBtn) {
-    // Loop through all buttons
     Array.from(openBtns).forEach((btn) => {
       btn.addEventListener("click", () => {
-        modal.style.display = "flex";
+        const design = btn.getAttribute("data-design");
+        const price = btn.getAttribute("data-price");
+        const image = btn.getAttribute("data-image");
+
+        // Show info only if they exist, otherwise hide that part
+        if (design) {
+          chosenTemplate.textContent = "Ընտրված դիզայն՝ " + design;
+          chosenTemplate.style.display = "block";
+          designInput.value = design;
+        } else {
+          chosenTemplate.style.display = "none";
+          designInput.value = "";
+        }
+
+        if (price) {
+          chosenPrice.textContent = "Գին՝ " + price;
+          chosenPrice.style.display = "block";
+          priceInput.value = price;
+        } else {
+          chosenPrice.style.display = "none";
+          priceInput.value = "";
+        }
+
+        if (image) {
+          chosenImage.src = image;
+          chosenImage.style.display = "block";
+        } else {
+          chosenImage.style.display = "none";
+        }
+
+        modal.classList.add("open");
       });
     });
 
     closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
+      modal.classList.remove("open");
     });
 
     window.addEventListener("click", (e) => {
-      if (e.target === modal) modal.style.display = "none";
+      if (e.target === modal) {
+        modal.classList.remove("open");
+      }
     });
   }
 
   // ========================
+  // ORDER INVITATION
+  // ========================
+
+  const designSelect = document.getElementById("designSelect");
+  document.querySelectorAll(".order-btn").forEach((button) => {
+    button.addEventListener("click", function () {
+      const design = this.getAttribute("data-design");
+      designSelect.value = design;
+      modal.style.display = "block";
+    });
+  });
+
+  closeBtn.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // ========================
   // WORKFLOW CAROUSEL (MOBILE)
   // ========================
-  const track = document.querySelector(".workflow-grid");
-  const prevBtn = document.querySelector(".carousel-prev");
-  const nextBtn = document.querySelector(".carousel-next");
-  const scrollHint = document.querySelector(".scroll-hint");
+  document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.querySelector(".workflow-carousel");
+    const track = carousel.querySelector(".workflow-grid");
 
-  if (track && prevBtn && nextBtn) {
-    const getScrollAmount = () => {
-      const card = track.querySelector(".workflow-card");
-      if (!card) return 260;
-      const style = getComputedStyle(card);
-      const gap = parseInt(style.marginRight) || 16; // fallback gap
-      return card.offsetWidth + gap;
-    };
+    function enableMobileLayout() {
+      carousel.classList.add("mobile-layout");
 
-    nextBtn.addEventListener("click", () => {
-      track.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
-      if (scrollHint) scrollHint.style.display = "none";
-    });
+      // Force scroll to the first card after layout/render
+      requestAnimationFrame(() => {
+        track.scrollLeft = 0;
+      });
 
-    prevBtn.addEventListener("click", () => {
-      track.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
-      if (scrollHint) scrollHint.style.display = "none";
-    });
+      setTimeout(() => (track.scrollLeft = 0), 50);
+      setTimeout(() => (track.scrollLeft = 0), 100);
+    }
 
-    // Drag / touch support
+    function disableMobileLayout() {
+      carousel.classList.remove("mobile-layout");
+    }
+
+    function updateLayout() {
+      if (window.innerWidth <= 900) {
+        enableMobileLayout();
+      } else {
+        disableMobileLayout();
+      }
+    }
+
+    // Initial layout
+    updateLayout();
+
+    // On resize
+    window.addEventListener("resize", updateLayout);
+
+    // Drag / touch support for mobile
     let isDragging = false,
       startX,
       scrollLeft;
@@ -143,7 +214,6 @@ document.addEventListener("DOMContentLoaded", () => {
       isDragging = true;
       startX = e.pageX - track.offsetLeft;
       scrollLeft = track.scrollLeft;
-      if (scrollHint) scrollHint.style.display = "none";
     });
 
     track.addEventListener("mouseup", () => (isDragging = false));
@@ -159,14 +229,13 @@ document.addEventListener("DOMContentLoaded", () => {
     track.addEventListener("touchstart", (e) => {
       startX = e.touches[0].pageX;
       scrollLeft = track.scrollLeft;
-      if (scrollHint) scrollHint.style.display = "none";
     });
 
     track.addEventListener("touchmove", (e) => {
       const x = e.touches[0].pageX;
       track.scrollLeft = scrollLeft + (startX - x);
     });
-  }
+  });
 
   // ========================
   // ANIMATIONS ON VIEW
@@ -177,12 +246,45 @@ document.addEventListener("DOMContentLoaded", () => {
         if (entry.isIntersecting) entry.target.classList.add("active");
       });
     },
-    { threshold: 0.2 }
+    { threshold: 0.2 },
   );
 
   document
     .querySelectorAll(
-      ".fade-in, .price-card, .workflow-card, .main-title, .subtitle, .lead, .section-title, .workflow-card-title, .template-title"
+      ".fade-in, .price-card, .workflow-card, .main-title, .subtitle, .lead, .section-title, .workflow-card-title, .template-title",
     )
     .forEach((el) => observer.observe(el));
+});
+
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
+
+// Disable key combinations
+document.addEventListener("keydown", function (e) {
+  // F12
+  if (e.keyCode === 123) {
+    e.preventDefault();
+  }
+
+  // Ctrl+Shift+I / Cmd+Opt+I
+  if (
+    (e.ctrlKey && e.shiftKey && e.keyCode === 73) ||
+    (e.metaKey && e.altKey && e.keyCode === 73)
+  ) {
+    e.preventDefault();
+  }
+
+  // Ctrl+Shift+J / Cmd+Opt+J
+  if (
+    (e.ctrlKey && e.shiftKey && e.keyCode === 74) ||
+    (e.metaKey && e.altKey && e.keyCode === 74)
+  ) {
+    e.preventDefault();
+  }
+
+  // Ctrl+U / Cmd+U
+  if ((e.ctrlKey && e.keyCode === 85) || (e.metaKey && e.keyCode === 85)) {
+    e.preventDefault();
+  }
 });

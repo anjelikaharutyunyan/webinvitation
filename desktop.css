@@ -156,12 +156,9 @@ h4 {
 /* =========================
    Hero
    ========================= */
-.section {
-  padding: 48px 0;
-}
-
 .hero {
-  padding-top: 36px;
+  /* padding-top: 36px; */
+  padding-top: 45px;
   padding-bottom: 32px;
 }
 
@@ -224,7 +221,9 @@ h4 {
 .btn.primary:hover {
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 12px 32px var(--accent-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .button-wrapper {
@@ -243,6 +242,12 @@ h4 {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+}
+
+.see-more-btn {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 }
 
 /* =========================
@@ -280,7 +285,8 @@ h4 {
    ========================= */
 .price-section {
   background: transparent;
-  margin: 80px 0;
+  /* margin: 80px 0; */
+  padding: 165px 0;
 }
 
 .cards-wrapper {
@@ -303,7 +309,9 @@ h4 {
   gap: 18px;
   opacity: 0;
   transform: translateY(15px);
-  transition: opacity 1.3s ease-out, transform 1.3s ease-out;
+  transition:
+    opacity 1.3s ease-out,
+    transform 1.3s ease-out;
 }
 
 .price-card.active {
@@ -312,7 +320,7 @@ h4 {
 }
 
 .card-title {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin: 0;
   color: var(--accent-dark);
 }
@@ -388,7 +396,9 @@ h4 {
   cursor: pointer;
   background: var(--accent-dark);
   color: #fff;
-  transition: background 0.3s, opacity 0.3s;
+  transition:
+    background 0.3s,
+    opacity 0.3s;
   border-radius: 30px !important;
 }
 
@@ -418,6 +428,7 @@ h4 {
 
 .template-image {
   width: 100%;
+  height: 450px;
   border-radius: 28px;
   margin-bottom: 20px;
 }
@@ -425,14 +436,28 @@ h4 {
 .template-title {
   font-family: "Playfair Display", serif;
   font-size: 24px;
-  margin: 10px 0 5px;
+  margin: 0px 0 5px;
   color: var(--accent-dark);
 }
 
 .template-price {
   font-size: 20px;
   color: var(--accent-dark);
-  margin-bottom: 18px;
+  /* margin-bottom: 18px; */
+}
+
+/* Sale price styles */
+.template-price.sale {
+  margin-left: 7px !important;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.template-price.sale .old-price {
+  text-decoration: line-through;
+  color: var(#2e2e2e);
+  font-weight: 500;
 }
 
 .template-btn {
@@ -452,13 +477,63 @@ h4 {
   background: var(--muted);
 }
 
+/* For Order Choose Template */
+.chosen-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.chosen-image {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  object-fit: cover;
+  margin-bottom: 0;
+}
+
+.chosen-text {
+  display: flex;
+  flex-direction: column;
+}
+
+#chosen-template {
+  margin: 0;
+  font-size: 20px;
+  color: var(--accent-dark);
+}
+
+.chosen-text p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--accent-dark);
+}
+
 /* =========================
    Workflow Section
    ========================= */
+/* ===== Workflow Section Base ===== */
 .workflow-section {
   padding: 80px 0;
   font-family: "Cormorant Garamond", serif;
   color: var(--accent-dark);
+}
+
+.workflow-title {
+  text-align: center;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  margin-bottom: 60px;
+  font-weight: 400;
+}
+
+.workflow-carousel {
+  position: relative;
+  overflow: hidden;
 }
 
 .workflow-grid {
@@ -478,7 +553,9 @@ h4 {
   width: 100%;
   opacity: 0;
   transform: translateY(15px);
-  transition: opacity 1.3s ease-out, transform 1.3s ease-out;
+  transition:
+    opacity 1.3s ease-out,
+    transform 1.3s ease-out;
 }
 
 .workflow-card.long {
@@ -489,13 +566,6 @@ h4 {
 .workflow-card.active {
   opacity: 1;
   transform: translateY(0);
-}
-
-.workflow-title {
-  text-align: center;
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  margin-bottom: 60px;
-  font-weight: 400;
 }
 
 .workflow-number {
@@ -519,18 +589,17 @@ h4 {
   color: var(--text);
 }
 
+/* Scroll hint hidden by default on desktop */
 .scroll-hint {
   display: none;
 }
-/* =========================
-   Workflow carousel mobile will be included later
-   ========================= */
 
 /* =========================
    FAQ Section
    ========================= */
 .faq-section {
-  padding: 60px 0;
+  /* padding: 60px 0; */
+  padding: 80px 0;
   font-family: "Cormorant Garamond", serif;
   color: var(--text);
 }
@@ -564,7 +633,9 @@ h4 {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease, opacity 0.5s ease;
+  transition:
+    max-height 0.5s ease,
+    opacity 0.5s ease;
   opacity: 0;
   margin-top: 12px;
   font-family: "PT Sans", sans-serif;
@@ -698,6 +769,17 @@ h4 {
   z-index: 999;
 }
 
+.modal input:focus,
+.modal select:focus,
+.modal textarea:focus {
+  outline: none;
+  border-color: var(--accent-dark);
+}
+
+.modal.open {
+  display: flex !important;
+}
+
 .modal-content {
   background: var(--card);
   width: 700px;
@@ -772,11 +854,6 @@ label.agree input[type="checkbox"] {
   width: 16px;
   height: 16px;
   flex: 0 0 16px;
-}
-
-label.agree span {
-  display: block;
-  line-height: 1.4;
 }
 
 .submit-btn {
@@ -858,7 +935,9 @@ label.agree span {
 .fade-in {
   opacity: 0;
   transform: translateY(10px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+  transition:
+    opacity 1s ease-out,
+    transform 1s ease-out;
 }
 .fade-in.active {
   opacity: 1;
@@ -875,6 +954,25 @@ label.agree span {
    Mobile Styles (max-width: 900px)
    ========================= */
 @media (max-width: 900px) {
+  /* ===== Sections Paddings ===== */
+  .hero {
+    padding-top: 0px;
+  }
+  .price-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .templates-section {
+    padding-top: 60px;
+  }
+  .workflow-section {
+    padding-top: 60px;
+    padding-bottom: 0px;
+  }
+  .faq-section {
+    padding-top: 60px;
+  }
+
   /* ===== 1. Header ===== */
   .site-header {
     border-bottom: none;
@@ -938,10 +1036,6 @@ label.agree span {
   }
 
   /* ===== 2. Hero ===== */
-  .hero {
-    padding: 0px 15px;
-    text-align: center;
-  }
 
   .hero-grid {
     grid-template-columns: 1fr;
@@ -1025,8 +1119,9 @@ label.agree span {
   }
 
   .template-image {
-    border-radius: 16px;
-    margin-bottom: 10px;
+    height: 300px;
+    width: 150px;
+    margin-bottom: 5px;
   }
 
   .template-title {
@@ -1039,68 +1134,58 @@ label.agree span {
 
   .template-btn {
     font-size: 14px;
-    padding: 8px 0;
+    padding: 8px 5px;
   }
 
-  /* ===== 4. Workflow Carousel ===== */
-  .workflow-section {
-    padding: 40px 0;
-  }
-
-  .workflow-title {
-    font-size: clamp(1.5rem, 5vw, 2rem);
-    margin-bottom: 30px;
-    text-align: center;
-  }
-
-  .workflow-carousel {
-    position: relative;
-  }
-
-  .workflow-grid {
-    display: flex;
+  .chosen-info {
     flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    gap: 16px;
-    padding-left: 15px;
+  }
+
+  #chosen-template {
+    font-size: 17px;
+  }
+  .chosen-text p {
+    font-size: 15px;
+  }
+  /* ===== 4. Workflow Carousel ===== */
+  .workflow-carousel.mobile-layout .workflow-grid {
+    display: inline-flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-    touch-action: pan-x; /* Only allow horizontal scrolling */
-    -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
-    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    gap: 16px;
+    padding-left: 16px;
+    scroll-padding-left: 16px;
+    width: 100vw !important;
+    max-width: 100%;
+    scroll-behavior: smooth;
   }
 
-  .workflow-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .workflow-card {
-    flex: 0 0 80%; /* card width responsive */
+  .workflow-carousel.mobile-layout .workflow-card,
+  .workflow-carousel.mobile-layout .workflow-card.long {
+    flex: 0 0 80%;
+    max-width: 80%;
     min-width: 220px;
-    max-width: 260px;
     scroll-snap-align: start;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    background: var(--card);
   }
 
-  .workflow-card.long {
-    flex: 0 0 80%; /* keep long card same width */
+  .workflow-carousel.mobile-layout .workflow-card:first-child {
+    margin-left: 0;
   }
 
-  .scroll-hint {
-    display: flex;
-    /* justify-content: center; */
+  .workflow-carousel.mobile-layout .scroll-hint {
+    display: flex !important;
+    position: absolute;
+    bottom: 10px;
+    right: 16px;
     font-size: 14px;
-    margin-top: 10px;
     color: var(--accent-dark);
-  }
-
-  /* ===== 5. Order Section ===== */
-  .order-section {
-    padding: 0px;
+    align-items: center;
+    gap: 6px;
+    pointer-events: none;
+    z-index: 10;
   }
 
   .order-container-flex {
