@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="hy">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heavenly Bloom Invitation | Webinvitation.am</title>
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://webinvitation.am/heavenly-bloom/" />
+  <meta property="og:title" content="Heavenly Bloom Invitation | Webinvitation.am" />
+  <meta property="og:description" content="Heavenly Bloom Invitation - Մկրտության Հրավեր webinvitation.am" />
+  <meta property="og:image" content="https://webinvitation.am/heavenly-bloom/images/girl.png" />
+  <meta property="og:image:width" content="400" />
+  <meta property="og:image:height" content="400" />
+  <meta property="og:locale" content="hy_AM" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:url" content="https://webinvitation.am/heavenly-bloom/" />
+  <meta property="twitter:title" content="Heavenly Bloom Invitation | Webinvitation.am" />
+  <meta property="twitter:description" content="Heavenly Bloom Invitation - Մկրտության Հրավեր webinvitation.am" />
+  <meta property="twitter:image" content="https://webinvitation.am/heavenly-bloom/images/girl.png" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+  <link href="./style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="music-toggle playing" id="musicToggle" aria-label="Toggle music">
+    ♪
+  </div>
+
+  <audio id="bgMusic" loop playsinline>
+    <source src="./music/hallelujah.mp3" type="audio/mpeg">
+  </audio>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="label">ՍՈՒՐԲ ՄԿՐՏՈՒԹՅՈՒՆ</div>
+    <div class="date">02 • 06 • 2026</div>
+    <img src="./images/girl.png" alt="Girl" />
+    <div class="name">Անգելինա</div>
+  </section>
+
+  <!-- GREETING -->
+  <section class="greeting">
+    <img src="./images/angel1.png" class="angel left" alt="" />
+    <img src="./images/angel2.png" class="angel right" alt="" />
+    <p>
+      ԲԱՐԵԿԱՄՆԵՐ ԵՎ ԸՆԿԵՐՆԵՐ<br /><br />
+      Մեծ ուրախությամբ հրավիրում ենք Ձեզ մեր Անգելինայի Սուրբ Մկրտությանը
+    </p>
+  </section>
+
+  <!-- LOCATIONS -->
+  <section class="locations">
+    <div class="location-block">
+      <div class="time">15:30</div>
+      <div class="event-label">ՄԿՐՏՈՒԹՅՈՒՆ</div>
+      <div class="place">
+        Սպասում ենք Ձեզ <br />Սուրբ Ամենափրկիչ եկեղեցում
+      </div>
+      <a href="https://www.google.com/maps/place/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C+%D0%A0%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8/@40.1776875,44.5126406,15z/data=!4m6!3m5!1s0x406abcfa28499691:0x2bde14d127166c74!8m2!3d40.1776875!4d44.5126406!16s%2Fm%2F02r2t03?entry=ttu"
+        class="map-btn">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a>
+    </div>
+
+    <div class="location-block">
+      <div class="time">17:30</div>
+      <div class="event-label">ԽՆՋՈՒՅՔ</div>
+      <div class="place">«Բելաջո» ռեստորանային համալիրում</div>
+      <a href="https://www.google.com/maps/place/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C+%D0%A0%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B8/@40.1776875,44.5126406,15z/data=!4m6!3m5!1s0x406abcfa28499691:0x2bde14d127166c74!8m2!3d40.1776875!4d44.5126406!16s%2Fm%2F02r2t03?entry=ttu"
+        class="map-btn">ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a>
+    </div>
+  </section>
+
+  <!-- CANDLES -->
+  <section class="candles">
+    <img src="./images/candle.png" alt="Candles" />
+  </section>
+
+  <!-- RSVP -->
+  <!-- <section class="rsvp">
+      <p>Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև 15.05.2026</p>
+    </section> -->
+  <!-- COUNTDOWN -->
+  <section class="countdown">
+    <div class="countdown-inner">
+      <h2 class="countdown-title">Մինչ Սուրբ Մկրտությունը մնացել է</h2>
+
+      <div class="countdown-wrapper">
+        <div class="time-item">
+          <span id="days">00</span>
+          <small>Օր</small>
+        </div>
+
+        <div class="time-item">
+          <span id="hours">00</span>
+          <small>Ժամ</small>
+        </div>
+
+        <div class="time-item">
+          <span id="minutes">00</span>
+          <small>Րոպե</small>
+        </div>
+
+        <div class="time-item">
+          <span id="seconds">00</span>
+          <small>Վայրկյան</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

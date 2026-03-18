@@ -1,0 +1,47 @@
+ <script>
+      // Remove or modify Tilda's injected style tag
+      function overrideTildaStyle() {
+        // Find Tilda's style tag
+        const tildaStyle = document.querySelector("style.t396__scale-style");
+        if (tildaStyle) {
+          // Replace 7924 with 7024 in the style content
+          tildaStyle.textContent = tildaStyle.textContent.replace(
+            /7924/g,
+            "7024",
+          );
+
+          // OR remove it completely
+          // tildaStyle.remove();
+        }
+
+        // Also force inline styles on elements
+        document
+          .querySelectorAll(
+            "#rec1152279161 .t396__carrier, #rec1152279161 .t396__filter, #rec1152279161 .t396__artboard",
+          )
+          .forEach((el) => {
+            el.style.cssText += "height: 7024px !important;";
+          });
+      }
+
+      // Run multiple times to catch Tilda's injection
+      [0, 100, 500, 1000, 2000, 5000].forEach((timeout) => {
+        setTimeout(overrideTildaStyle, timeout);
+      });
+
+      // Watch for new style tags
+      new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+          if (mutation.addedNodes) {
+            mutation.addedNodes.forEach(function (node) {
+              if (
+                node.nodeName === "STYLE" &&
+                node.className === "t396__scale-style"
+              ) {
+                overrideTildaStyle();
+              }
+            });
+          }
+        });
+      }).observe(document.head, { childList: true, subtree: true });
+    </script>

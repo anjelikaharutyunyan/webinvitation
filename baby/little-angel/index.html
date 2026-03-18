@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="hy">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>Little Angel Invitation | Webinvitation.am</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://webinvitation.am/little-angel/" />
+    <meta
+      property="og:title"
+      content="Little Angel Invitation | Webinvitation.am"
+    />
+    <meta
+      property="og:description"
+      content="Little Angel Invitation - Մկրտության Հրավեր webinvitation.am"
+    />
+    <meta
+      property="og:image"
+      content="https://webinvitation.am/little-angel/images/background.png"
+    />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="400" />
+    <meta property="og:locale" content="hy_AM" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta
+      property="twitter:url"
+      content="https://webinvitation.am/little-angel/"
+    />
+    <meta
+      property="twitter:title"
+      content="Little Angel Invitation | Webinvitation.am"
+    />
+    <meta
+      property="twitter:description"
+      content="Little Angel Invitation - Մկրտության Հրավեր webinvitation.am"
+    />
+    <meta
+      property="twitter:image"
+      content="https://webinvitation.am/little-angel/images/background.png"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- FIXED BACKGROUND -->
+    <div class="background-wrapper"></div>
+    <div class="overlay"></div>
+
+    <!-- CONTENT WRAPS -->
+    <div class="content">
+      <!-- HERO -->
+      <section class="section-hero">
+        <div class="angels">
+          <img src="images/left-angel.svg" class="angel left" />
+          <img src="images/right-angel.svg" class="angel right" />
+        </div>
+
+        <div class="title">ՄԿՐՏՈՒԹՅԱՆ</div>
+        <div class="title">ՀՐԱՎԵՐ</div>
+      </section>
+
+      <!-- TEXT -->
+      <section>
+        <h2 class="friends">Ընկերներ և բարեկամներ</h2>
+        <div class="text">
+          Սիրով հրավիրում ենք Ձեզ կիսելու մեզ հետ մեր դստեր
+          <strong>Անի Հովհաննիսյանի</strong> լուսավոր օրը
+        </div>
+        <div class="date">
+          <div>Սպասում ենք Ձեզ</div>
+          <div class="day">20</div>
+          <div class="month">ՄԱՅԻՍ</div>
+          <div class="year">2026</div>
+        </div>
+      </section>
+
+      <!-- BAPTISM -->
+      <section>
+        <img src="images/church.svg" class="icon" alt="church" />
+        <h2>Մկրտություն</h2>
+        <h3>15:00</h3>
+        <div>Սուրբ Գայանե եկեղեցի</div>
+        <div>ք․ Էջմիածին</div>
+        <a class="button" href="#">Ինչպես հասնել</a>
+      </section>
+
+      <!-- PARTY -->
+      <section>
+        <img src="images/glace.svg" class="icon" alt="party" />
+        <h2>Խնջույք</h2>
+        <h3>18:00</h3>
+        <div>Dvin Music Hall</div>
+        <div>ք․ Երևան, Պարոնյան 40</div>
+        <a class="button" href="#">Ինչպես հասնել</a>
+      </section>
+
+      <!-- RSVP -->
+      <section>
+        <h2>Խնդրում ենք հաստատել Ձեր ներկայությունը</h2>
+        <form id="rsvpForm">
+          <input type="text" id="name" placeholder="Անուն Ազգանուն" required />
+          <div class="radioGroup">
+            <label>
+              <input type="radio" name="rsvp" value="Կմասնակցեմ" required />
+              Այո, կմասնակցեմ
+            </label>
+            <label>
+              <input type="radio" name="rsvp" value="Չեմ կարող" />
+              Ցավոք, չեմ կարող
+            </label>
+          </div>
+          <input type="text" id="guests" placeholder="Հյուրերի թիվ" />
+          <button type="submit">Ուղարկել</button>
+        </form>
+      </section>
+    </div>
+
+    <!-- MUSIC -->
+    <div class="music" onclick="toggleMusic()">
+      <i id="musicIcon" class="fa-solid fa-music"></i>
+    </div>
+    <audio id="music" loop>
+      <source src="./music/hallelujah.mp3" />
+    </audio>
+    <script src="./script.js"></script>
+  </body>
+</html>

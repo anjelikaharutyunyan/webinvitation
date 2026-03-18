@@ -1,0 +1,327 @@
+/* ================= CUSTOM ARMENIAN FONT ================= */
+
+@font-face {
+  font-family: "Euro2016";
+  src: url("./fonts/Euro2016Extended.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ================= BASE ================= */
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background: #f8f1ef;
+  color: #746a70;
+  text-align: center;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  padding: 70px 20px 30px;
+}
+
+.hero .label {
+  letter-spacing: 2px;
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.hero .date {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #c4a3a8;
+  margin-top: 6px;
+}
+
+.hero img {
+  width: 220px;
+  margin: 70px auto 25px;
+  display: block;
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero .name {
+  font-family: "Euro2016", serif;
+  font-size: 54px;
+  color: #b58b91;
+  margin-top: 35px;
+  letter-spacing: 1px;
+}
+
+/* ================= GREETING ================= */
+
+.greeting {
+  position: relative;
+  padding: 10px 20px;
+}
+
+.greeting p {
+  max-width: 500px;
+  margin: auto;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ===== Angels (iPhone Safe Positioning) ===== */
+
+.angel {
+  position: absolute;
+  width: 130px;
+  opacity: 0.65;
+  animation: angelFloat 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.angel.left {
+  top: 90%;
+  left: 0px;
+}
+
+.angel.right {
+  top: 90%;
+  right: 30px;
+  animation-delay: 2s;
+}
+
+/* ================= LOCATIONS ================= */
+
+.locations {
+  padding: 30px 20px 10px;
+}
+
+.location-block {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.time {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 46px;
+  color: #8d8288;
+}
+
+.event-label {
+  letter-spacing: 2px;
+  font-size: 12px;
+  color: #a79aa0;
+  margin: 8px 0 18px;
+}
+
+.place {
+  padding: 0px 20px;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.address {
+  font-size: 14px;
+  color: #9b8f95;
+  margin-bottom: 20px;
+}
+
+.map-btn {
+  display: inline-block;
+  padding: 12px 36px;
+  border-radius: 50px;
+  background: #ebe3e1;
+  color: #7c7076;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  transition: 0.3s;
+}
+
+.map-btn:hover {
+  background: #dfd4d1;
+}
+
+/* ================= CANDLES ================= */
+
+.candles {
+  padding: 0px 20px 20px;
+}
+
+.candles img {
+  width: 300px;
+  opacity: 0.9;
+  animation: float 7s ease-in-out infinite;
+}
+
+/* ================= RSVP ================= */
+
+.rsvp {
+  padding: 10px 20px 50px;
+}
+
+.rsvp p {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes angelFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ================= DESKTOP ================= */
+
+@media (min-width: 900px) {
+  .hero {
+    padding-top: 100px;
+  }
+
+  .hero img {
+    width: 260px;
+  }
+
+  .hero .name {
+    font-size: 68px;
+  }
+
+  .time {
+    font-size: 80px;
+  }
+
+  .place {
+    font-size: 22px;
+  }
+
+  .candles img {
+    width: 240px;
+  }
+
+  .angel {
+    width: 150px;
+  }
+
+  .angel.left {
+    top: 60%;
+    left: 40px;
+  }
+
+  .angel.right {
+    top: 65%;
+    right: 40px;
+  }
+}
+
+/* ================= COUNTDOWN (Luxury Minimal) ================= */
+
+.countdown {
+  background: #e9cbcb;
+  /* soft beige like screenshot */
+  padding: 35px 0px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.countdown-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.countdown-title {
+  font-family: "MK Ani", serif;
+  /* or your elegant Armenian font */
+  font-size: 20px;
+  color: #faf8f6;
+  margin: 0;
+  /* margin-bottom: 60px; */
+  font-weight: normal;
+}
+
+.countdown-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.time-item span {
+  display: block;
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  color: #faf8f6;
+  margin-bottom: 10px;
+}
+
+.time-item small {
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
+  color: #faf8f6;
+  opacity: 0.9;
+}
+
+/* ================= MUSIC TOGGLE ================= */
+.music-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 50px;
+  color: #b58b91;
+  cursor: pointer;
+  z-index: 9999;
+  user-select: none;
+  transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+}
+
+.music-toggle:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.music-toggle.off {
+  opacity: 0.4;
+  color: #8d7a80;
+}
+
+.music-toggle.playing {
+  animation: pulseMusic 1.5s infinite;
+}
+
+@keyframes pulseMusic {
+
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}

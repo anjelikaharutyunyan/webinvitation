@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="hy">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blessing Invitation | Webinvitation.am</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://webinvitation.am/blessing/" />
+    <meta
+      property="og:title"
+      content="Blessing Invitation | Webinvitation.am"
+    />
+    <meta
+      property="og:description"
+      content="Blessing Invitation - Մկրտության Հրավեր webinvitation.am"
+    />
+    <meta
+      property="og:image"
+      content="https://webinvitation.am/blessing/images/baby.jpg"
+    />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="400" />
+    <meta property="og:locale" content="hy_AM" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content="https://webinvitation.am/blessing/" />
+    <meta
+      property="twitter:title"
+      content="Blessing Invitation | Webinvitation.am"
+    />
+    <meta
+      property="twitter:description"
+      content="Blessing Invitation - Մկրտության Հրավեր webinvitation.am"
+    />
+    <meta
+      property="twitter:image"
+      content="https://webinvitation.am/blessing/images/baby.jpg"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- HERO SECTION (already visible, no scroll animation needed) -->
+    <section class="section hero">
+      <div class="hero-text">
+        <!-- small label -->
+        <div class="top-invite-label">Մկրտության հրավեր</div>
+
+        <div class="name">Արիանա</div>
+
+        <!-- photo box -->
+        <div class="photo-box">
+          <div class="photo-bg"></div>
+          <img src="./images/baby.jpg" alt="baby" />
+        </div>
+
+        <!-- stylish date -->
+        <div class="date-big">01.06.2026</div>
+
+        <!-- music icon -->
+        <button id="musicBtn">
+          <img src="./images/play.svg" id="musicIcon" alt="play" />
+        </button>
+        <audio id="bgMusic" src="./music/hallelujah.mp3" loop></audio>
+      </div>
+    </section>
+
+    <!-- ANGEL SECTION – with scroll animation -->
+    <section class="section angel-section">
+      <img
+        src="./images/angel.png"
+        class="angel-img fade-on-scroll"
+        alt="angel"
+      />
+    </section>
+
+    <!-- INVITATION SECTION – all elements with scroll animations -->
+    <section class="section">
+      <!-- Title with animation -->
+      <div class="title fade-on-scroll">ԲԱՐԵԿԱՄՆԵՐ ԵՎ ԸՆԿԵՐՆԵՐ</div>
+
+      <!-- Subtitle with animation -->
+      <div class="subtitle fade-on-scroll delay-1">
+        Մեծ ուրախությամբ հրավիրում ենք Ձեզ մեր սիրելի դուստր Արիանայի Սուրբ
+        Մկրտությանը
+      </div>
+
+      <!-- Timer title with animation -->
+      <div class="subtitle fade-on-scroll delay-2" style="margin-top: 40px">
+        Միջոցառմանը մնաց...
+      </div>
+
+      <!-- ===== COMPACT TIMER - each block animated separately ===== -->
+      <div class="timer-container">
+        <div class="timer-row" id="timer">
+          <div class="timer-block fade-on-scroll delay-1">
+            <div class="timer-number" id="days">00</div>
+            <div class="timer-label">օր</div>
+          </div>
+          <div class="timer-block fade-on-scroll delay-2">
+            <div class="timer-number" id="hours">00</div>
+            <div class="timer-label">ժամ</div>
+          </div>
+          <div class="timer-block fade-on-scroll delay-3">
+            <div class="timer-number" id="minutes">00</div>
+            <div class="timer-label">րոպե</div>
+          </div>
+          <div class="timer-block fade-on-scroll delay-4">
+            <div class="timer-number" id="seconds">00</div>
+            <div class="timer-label">վայրկյան</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Baptism block - each element animated with different delays -->
+      <div class="event-block">
+        <img
+          src="./images/church.svg"
+          class="icon fade-on-scroll"
+          alt="church"
+        />
+        <div class="time fade-on-scroll delay-1">ՄԿՐՏՈՒԹՅՈՒՆ 15:00</div>
+        <div class="bold fade-on-scroll delay-2">
+          Սուրբ Գրիգոր Լուսավորիչ Մայր Եկեղեցի
+        </div>
+        <div class="location fade-on-scroll delay-3">
+          ք. Երևան, Էջմիածին Քաղաքի փող.
+        </div>
+        <a
+          href="https://yandex.com/maps/10262/yerevan/stops/1733358181/?ll=44.562435%2C40.194277&tab=overview&z=16"
+          class="button fade-on-scroll delay-4"
+          >ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a
+        >
+      </div>
+
+      <!-- Party block - each element animated with different delays -->
+      <div class="event-block">
+        <img src="./images/hall.svg" class="icon fade-on-scroll" alt="hall" />
+        <div class="time fade-on-scroll delay-1">ԽՆՋՈՒՅՔ 17:00</div>
+        <div class="bold fade-on-scroll delay-2">PRIME HALL</div>
+        <div class="location fade-on-scroll delay-3">
+          Երևանի խճուղի, 3-րդ Կմ, 1
+        </div>
+        <a
+          href="https://yandex.com/maps/org/17885421655/?ll=44.482296%2C40.221397&utm_source=share&z=14"
+          class="button fade-on-scroll delay-4"
+          >ԻՆՉՊԵՍ ՀԱՍՆԵԼ</a
+        >
+      </div>
+
+      <!-- RSVP text with animation -->
+      <div class="subtitle fade-on-scroll" style="margin-top: 60px">
+        Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև<br />
+        <span class="bold">01.05.2026</span>
+      </div>
+
+      <!-- Final phrase with animation -->
+      <div class="waiting-love fade-on-scroll delay-2">Սպասում ենք սիրով</div>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

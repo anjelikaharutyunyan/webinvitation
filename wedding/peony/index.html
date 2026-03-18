@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="hy">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>Peony Wedding Invitation | Webinvitation.am</title>
+
+    <meta
+      name="description"
+      content="Peony — Հարսանեկան հրավիրատոմս webinvitation.am"
+    />
+    <meta name="author" content="Webinvitation.am" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://webinvitation.am/wedding/peony" />
+    <meta property="og:title" content="Peony Wedding Invitation" />
+    <meta
+      property="og:description"
+      content="Հարսանեկան հրավիրատոմս webinvitation.am"
+    />
+    <meta
+      property="og:image"
+      content="https://webinvitation.am/wedding/peony/images/background.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Peony Wedding Invitation" />
+    <meta
+      name="twitter:description"
+      content="Հարսանեկան հրավիրատոմս webinvitation.am"
+    />
+    <meta
+      name="twitter:image"
+      content="https://webinvitation.am/wedding/peony/images/background.jpg"
+    />
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Serif+Armenian:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <style>
+      body.open {
+        overflow-y: auto !important;
+        height: auto !important;
+      }
+
+      .section-screen {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 100px 20px 40px 20px;
+        position: relative;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s ease-out;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(-50%);
+        }
+
+        100% {
+          transform: translateX(0%);
+        }
+      }
+
+      .animate-marquee-continuous {
+        display: flex;
+        width: max-content;
+        animation: marquee 25s linear infinite;
+      }
+
+      .img-container {
+        width: 100%;
+        max-width: 320px;
+        aspect-ratio: 3 / 4;
+        flex-shrink: 1;
+        min-height: 0;
+      }
+
+      .heart-beat-anim {
+        animation: heartBeat 2s infinite;
+      }
+
+      @keyframes heartBeat {
+        0% {
+          transform: scale(1);
+        }
+
+        14% {
+          transform: scale(1.1);
+        }
+
+        28% {
+          transform: scale(1);
+        }
+
+        42% {
+          transform: scale(1.1);
+        }
+
+        70% {
+          transform: scale(1);
+        }
+      }
+
+      .timer-card {
+        background: white;
+        border: 1px solid rgba(181, 77, 90, 0.2);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Gallery Slider */
+      .gallery-track {
+        display: flex;
+        gap: 15px;
+        overflow-x: auto;
+        padding: 10px 24px 30px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        cursor: grab;
+      }
+
+      .gallery-track::-webkit-scrollbar {
+        display: none;
+      }
+
+      .gallery-track:active {
+        cursor: grabbing;
+      }
+
+      .gallery-item {
+        flex: 0 0 85%;
+        aspect-ratio: 3/4;
+        border-radius: 24px;
+        overflow: hidden;
+        scroll-snap-align: center;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        position: relative;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      @media (min-width: 768px) {
+        .gallery-track {
+          max-width: 1200px;
+          margin: 0 auto;
+          gap: 25px;
+        }
+
+        .gallery-item {
+          flex: 0 0 calc(33.333% - 20px);
+          scroll-snap-align: start;
+        }
+
+        .gallery-item:hover {
+          transform: translateY(-8px);
+        }
+      }
+
+      /* --- FOOTER --- */
+      .main-footer {
+        padding: 60px 20px;
+        text-align: center;
+        background: #787c59;
+        /* Քո հիմնական կանաչ գույնը */
+        margin-top: 40px;
+      }
+
+      .music-playing {
+        animation: spin 8s linear infinite;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .footer-container h3 {
+        color: white;
+        font-size: 24px;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+        font-family: "Great Vibes", cursive;
+        /* Որպեսզի համահունչ լինի անունների հետ */
+      }
+
+      .footer-container p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+
+  <body
+    onclick="openEnvelope(this)"
+    class="m-0 p-0 h-screen w-screen overflow-hidden relative bg-[#787C59] transition-colors duration-1000"
+  >
+    <button
+      id="musicBtn"
+      onclick="toggleMusic(event)"
+      class="fixed top-[30px] right-[20px] z-[9999] hidden w-11 h-11 items-center justify-center rounded-full bg-[#787C59]/80 border border-white/70 backdrop-blur-md shadow-lg transition-all duration-500 hover:scale-110 active:scale-95"
+    >
+      <div
+        id="play-icon"
+        class="ml-1 w-0 h-0 border-y-[6px] border-y-transparent border-l-[10px] border-l-white"
+      ></div>
+
+      <div id="pause-icon" class="hidden gap-1">
+        <div class="w-[3px] h-3 bg-white"></div>
+        <div class="w-[3px] h-3 bg-white"></div>
+      </div>
+    </button>
+
+    <audio id="bgMusic" loop="">
+      <source src="media/perfect.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div
+      id="envelope-container"
+      class="fixed inset-0 z-50 pointer-events-none flex items-center justify-center"
+    >
+      <div class="relative w-full h-full flex items-center justify-center">
+        <img
+          id="env-front"
+          src="./images/top.webp"
+          class="block max-w-none w-[710px] absolute top-0 left-1/2 -translate-x-1/2 z-20 transition-all duration-1000 pointer-events-auto filter]"
+        />
+
+        <img
+          id="env-back"
+          src="./images/bottom.webp"
+          class="block max-w-none w-[710px] absolute bottom-0 left-1/2 -translate-x-1/2 z-10 transition-all duration-1000 pointer-events-auto filter]"
+        />
+        <img
+          id="env-seal"
+          src="./images/noroot.png"
+          class="block max-w-none w-[220px] absolute top-1/2 left-1/2 -translate-x-[49%] -translate-y-1/2 z-30 cursor-pointer transition-all duration-600 pointer-events-auto filter drop-shadow-[0_0_20px_rgba(0,0,0,0.6)]"
+        />
+      </div>
+    </div>
+
+    <div
+      class="main-content relative w-full opacity-0 invisible transition-all duration-[1200ms] delay-[400ms] z-5 [.open_&]:opacity-100 [.open_&]:visible font-serif bg-white"
+    >
+      <div class="content">
+        <section class="hero-card">
+          <!-- Date Row -->
+          <div class="hero-date-vertical">
+            <span>16</span>
+            <span>04</span>
+            <span>26</span>
+          </div>
+
+          <!-- SAVE THE DATE -->
+          <div class="hero-save-vertical">SAVE THE DATE</div>
+
+          <!-- Couple Image at Top -->
+          <div class="hero-top-image">
+            <img src="images/couple.jpg" alt="couple" />
+          </div>
+
+          <!-- Names at Bottom -->
+          <div class="hero-right">
+            <h1 class="hero-names">Արմեն & Անահիտ</h1>
+          </div>
+
+          <!-- Peony at Bottom-Right -->
+          <img src="images/peonie.png" alt="peony" class="hero-peony" />
+        </section>
+
+        <section>
+          <h2 class="friends">Ընկերներ և բարեկամներ</h2>
+          <p class="text">
+            Մեր կյանքում գեղեցիկ իրադարձություն է սպասվում: Դուք հրավիրված եք
+            մեր նշանադրությանը
+          </p>
+
+          <!-- Calendar for April -->
+          <div class="calendar">
+            <div class="month-name">ԱՊՐԻԼ 2026</div>
+            <div class="weekdays">
+              <div>Կիր</div>
+              <div>Երկ</div>
+              <div>Երք</div>
+              <div>Չրք</div>
+              <div>Հնգ</div>
+              <div>Ուր</div>
+              <div>Շբթ</div>
+            </div>
+            <div class="days">
+              <!-- empty divs for offset, April 1 starts on Wednesday -->
+              <div></div>
+              <div></div>
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <div>8</div>
+              <div>9</div>
+              <div>10</div>
+              <div>11</div>
+              <div>12</div>
+              <div>13</div>
+              <div>14</div>
+              <div>15</div>
+              <div class="special-day">16</div>
+              <div>17</div>
+              <div>18</div>
+              <div>19</div>
+              <div>20</div>
+              <div>21</div>
+              <div>22</div>
+              <div>23</div>
+              <div>24</div>
+              <div>25</div>
+              <div>26</div>
+              <div>27</div>
+              <div>28</div>
+              <div>29</div>
+              <div>30</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PARTY -->
+        <section>
+          <h2>Խնջույք</h2>
+          <h3>18:00</h3>
+          <p>«Prime Hall» ռեստորանային համալիր</p>
+          <p>Հասցե՝ Երևան, Եղվարդի խճուղի, 3-րդ կիրճ, 1 շինություն</p>
+          <a class="button" href="https://yandex.com/maps/-/CPFIUEye"
+            >Ինչպես հասնել</a
+          >
+        </section>
+
+        <!-- Dress Code with Palitra -->
+        <section>
+          <h2>Dress Code</h2>
+          <p style="max-width: 500px; margin: 0 auto">
+            Մեզ համար ամենակարևորը Ձեր ներկայությունն է, սակայն ուրախ կլինենք,
+            եթե ներկա լինեք մեր նախընտրած երանգների հագուստով:
+          </p>
+          <!-- Color palette 5 shades -->
+          <div class="color-palitra">
+            <div
+              class="color-dot"
+              style="background-color: #fbe9cd"
+              title="#FBE9CD"
+            ></div>
+            <div
+              class="color-dot"
+              style="background-color: #787c59"
+              title="#787C59"
+            ></div>
+            <div
+              class="color-dot"
+              style="background-color: #ede8dc"
+              title="#EDE8DC"
+            ></div>
+            <div
+              class="color-dot"
+              style="background-color: #b7c99f"
+              title="#B7C99F"
+            ></div>
+            <div
+              class="color-dot"
+              style="background-color: #dec4b4"
+              title="#DEC4B4"
+            ></div>
+          </div>
+          <!-- <p style="font-size: 14px; opacity: 0.8">
+            Վերոնշյալ երանգները կլրացնեն մեր տոնի գունապնակը
+          </p> -->
+        </section>
+
+        <!-- RSVP Section -->
+        <section class="rsvp-section">
+          <div class="rsvp-card">
+            <h2 class="rsvp-title">Հարցաթերթիկ</h2>
+
+            <p class="rsvp-subtitle">
+              Խնդրում ենք հաստատել Ձեր ներկայությունը մինչև դեկտեմբերի 1-ը։
+            </p>
+
+            <form id="wedding-form">
+              <label>Նշեք Ձեր անուն/ազգանունը</label>
+              <input type="text" name="name" required />
+
+              <label>Նշեք ում հետ եք ներկա լինելու (անուն/ազգանուն)</label>
+              <input type="text" name="guest" />
+
+              <label>Կկարողանա՞ք ներկա գտնվել միջոցառմանը</label>
+              <div class="radio-group">
+                <label class="radio">
+                  <input
+                    type="radio"
+                    name="attendance"
+                    value="Այո, կգամ"
+                    required
+                  />
+                  <span></span>
+                  Այո, կգամ
+                </label>
+
+                <label class="radio">
+                  <input
+                    type="radio"
+                    name="attendance"
+                    value="Ցավոք, չեմ կարողանա"
+                  />
+                  <span></span>
+                  Ցավոք, չեմ կարողանա
+                </label>
+              </div>
+
+              <label>Ու՞մ կողմից եք հրավիրված</label>
+              <div class="radio-group">
+                <label class="radio">
+                  <input type="radio" name="invitedBy" value="Արմեն" required />
+                  <span></span>
+                  Արմեն
+                </label>
+
+                <label class="radio">
+                  <input type="radio" name="invitedBy" value="Անահիտ" />
+                  <span></span>
+                  Անահիտ
+                </label>
+              </div>
+
+              <label>Գրեք Ձեր նախընտրած երգը</label>
+              <input type="text" name="song" />
+
+              <button type="submit" class="rsvp-btn">Ուղարկել</button>
+            </form>
+          </div>
+        </section>
+
+        <!-- Countdown Timer Section -->
+        <section>
+          <!-- <img src="images/peon-icon.png" class="icon" alt="countdown icon" /> -->
+          <h2 class="counter">Մինչև մեր օրը մնացել է</h2>
+          <div class="countdown" id="countdown">
+            <div class="countdown-item">
+              <span id="days">00</span>
+              <p>Օր</p>
+            </div>
+            <div class="countdown-item">
+              <span id="hours">00</span>
+              <p>Ժամ</p>
+            </div>
+            <div class="countdown-item">
+              <span id="minutes">00</span>
+              <p>Րոպե</p>
+            </div>
+            <div class="countdown-item">
+              <span id="seconds">00</span>
+              <p>Վայրկյան</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

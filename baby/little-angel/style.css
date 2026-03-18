@@ -1,0 +1,332 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans Armenian", sans-serif;
+}
+
+@font-face {
+  font-family: "Adamathuz";
+  src: url("./fonts/Adamathuz Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BraindAmanor";
+  src: url("./fonts/BraindAmanor.otf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+/* Fixed background wrapper */
+.background-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: -webkit-fill-available;
+  background: url("./images/background.jpg") center/cover no-repeat;
+  z-index: -2;
+}
+
+/* overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: -webkit-fill-available;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
+/* content wrapper */
+.content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* sections */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+/* hero section */
+.section-hero {
+  min-height: 70vh;
+  padding-top: 120px;
+  padding-bottom: 60px;
+  justify-content: flex-end;
+}
+
+/* angels */
+.angels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 460px;
+}
+
+.angel {
+  width: 120px;
+  opacity: 0.9;
+}
+
+/* titles */
+.title {
+  font-family: "BraindAmanor", sans-serif;
+  font-size: 36px;
+  letter-spacing: 4px;
+  font-weight: 500;
+}
+
+.subtitle {
+  font-size: 28px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* text */
+.text {
+  max-width: 380px;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-top: 10px;
+}
+
+/* date */
+.date {
+  margin-top: 20px;
+}
+
+.day {
+  font-size: 72px;
+  font-weight: 600;
+}
+
+.month {
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+.year {
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+h2 {
+  font-family: "Adamathuz", serif;
+}
+
+.friends {
+  font-size: 30px;
+}
+
+/* icons */
+.icon {
+  width: 80px;
+  margin-bottom: 14px;
+  opacity: 0.95;
+}
+
+/* buttons */
+.button {
+  margin-top: 24px;
+  padding: 12px 30px;
+  border: 2px solid white;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+.button:hover {
+  background: white;
+  color: black;
+}
+
+/* RSVP form */
+form {
+  max-width: 380px;
+  width: 100%;
+  margin-top: 25px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+/* inputs */
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 14px;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+/* radio group */
+.radioGroup {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.radioGroup label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: white;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.radioGroup input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: white;
+  margin: 0;
+}
+
+/* textarea */
+textarea {
+  min-height: 90px;
+  resize: none;
+}
+
+/* button */
+button {
+  margin-top: 28px;
+  padding: 13px 32px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: black;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  width: auto;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* music button */
+.music {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 22px;
+  color: white;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.music:hover {
+  background: white;
+  color: black;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  html,
+  body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  .background-wrapper,
+  .overlay {
+    height: 100%;
+    height: 100vh;
+    height: -webkit-fill-available;
+    position: fixed;
+  }
+
+  .section-hero {
+    padding-top: 100px;
+    margin-top: 220px;
+  }
+
+  /* Ensure content pushes full height */
+  .content {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+
+  /* Add padding to last section for better bottom spacing */
+  section:last-child {
+    padding-bottom: 60px;
+  }
+}
